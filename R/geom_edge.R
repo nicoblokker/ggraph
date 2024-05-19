@@ -315,7 +315,7 @@ GeomEdgeSpanPath <- ggproto('GeomEdgeSpanPath', GeomEdgePath,
                                      label_colour = label_colour, label_alpha = label_alpha, label_parse = label_parse,
                                      check_overlap = FALSE, angle_calc = 'none', force_flip = TRUE,
                                      label_dodge = label_dodge, label_push = label_push)
-    if (is.na(end_shape)) return(panel)
+    if (all(is.na(end_shape))) return(panel)
 
     data <- data[data$index == 0 | data$index == 1, ]
     end_shape <- translate_shape_string(end_shape)
